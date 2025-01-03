@@ -3,38 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pickup Line Generator</title>
+    <title>Rizz AI</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Courier New", monospace;
             text-align: center;
             padding: 50px;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: black;
+            color: #00ff00;
         }
         .container {
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-            background: white;
+            background: rgba(0, 0, 0, 0.8);
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3);
         }
         h1 {
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: 20px;
         }
-        .pickup-line {
+        .output {
             font-size: 18px;
             margin: 20px 0;
             padding: 10px;
-            background: #e8f5e9;
-            border: 1px solid #4caf50;
+            background: #002200;
+            border: 1px solid #00ff00;
             border-radius: 5px;
         }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #00ff00;
+            border-radius: 5px;
+            background: #002200;
+            color: #00ff00;
+        }
         button {
-            background-color: #4caf50;
-            color: white;
+            background-color: #00ff00;
+            color: black;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
@@ -42,31 +51,36 @@
             cursor: pointer;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #00cc00;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Instagram DM Pickup Line Generator</h1>
-        <div id="line" class="pickup-line">Click below to get a pickup line!</div>
-        <button onclick="generatePickupLine()">Get a Pickup Line</button>
+        <h1>Rizz AI: The Matrix of Romance</h1>
+        <input id="description" type="text" placeholder="Describe her..." />
+        <button onclick="generateRizz()">Generate Rizz Line</button>
+        <div id="output" class="output">Your rizz will appear here...</div>
     </div>
 
     <script>
-        const pickupLines = [
-            "Are you a magician? Because every time I look at your profile, everyone else disappears.",
-            "Do you have a map? I just got lost scrolling through your posts.",
-            "Are you French? Because Eiffel for you.",
-            "Do you believe in love at first DM, or should I message you again?",
-            "Your feed is amazing, but you just made my day better by existing.",
-            "Are you a photographer? Because you just captured my heart.",
-            "If I could rearrange the alphabet, I’d put U and I together on my follower list."
-        ];
+        function generateRizz() {
+            const descriptions = document.getElementById('description').value.toLowerCase();
+            let rizzLine;
 
-        function generatePickupLine() {
-            const randomIndex = Math.floor(Math.random() * pickupLines.length);
-            document.getElementById('line').innerText = pickupLines[randomIndex];
+            if (descriptions.includes("funny")) {
+                rizzLine = "Are you a stand-up comedian? Because you’ve just turned my world upside down with laughter.";
+            } else if (descriptions.includes("smart")) {
+                rizzLine = "Are you a library? Because you’re full of knowledge, and I’m checking you out.";
+            } else if (descriptions.includes("beautiful")) {
+                rizzLine = "Did it hurt when you fell from the heavens, or is that beauty just out of this world?";
+            } else if (descriptions.includes("kind")) {
+                rizzLine = "Your kindness is like a magnet, pulling me closer every second.";
+            } else {
+                rizzLine = "You’ve left me speechless, but my heart knows exactly what to say: You’re amazing.";
+            }
+
+            document.getElementById('output').innerText = rizzLine;
         }
     </script>
 </body>
